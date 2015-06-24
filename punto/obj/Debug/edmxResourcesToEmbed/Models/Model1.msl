@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="puntoencuentroModelStoreContainer" CdmEntityContainer="puntoencuentroEntities">
+    <EntitySetMapping Name="tb_categorias">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tb_categorias">
+        <MappingFragment StoreEntitySet="tb_categorias">
+          <ScalarProperty Name="idcategorias" ColumnName="idcategorias" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="responsable" ColumnName="responsable" />
+          <ScalarProperty Name="padre" ColumnName="padre" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_lugar_voto">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tb_lugar_voto">
+        <MappingFragment StoreEntitySet="tb_lugar_voto">
+          <ScalarProperty Name="idvoto" ColumnName="idvoto" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="num_votes" ColumnName="num_votes" />
+          <ScalarProperty Name="total_score" ColumnName="total_score" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbcatlugar">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbcatlugar">
+        <MappingFragment StoreEntitySet="tbcatlugar">
+          <ScalarProperty Name="idcatlugares" ColumnName="idcatlugares" />
+          <ScalarProperty Name="idcategorias" ColumnName="idcategorias" />
+          <ScalarProperty Name="idlugares" ColumnName="idlugares" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbevento">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbevento">
+        <MappingFragment StoreEntitySet="tbevento">
+          <ScalarProperty Name="idevento" ColumnName="idevento" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idtipo" ColumnName="idtipo" />
+          <ScalarProperty Name="idlugar" ColumnName="idlugar" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbgaleria">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbgaleria">
+        <MappingFragment StoreEntitySet="tbgaleria">
+          <ScalarProperty Name="idimagen" ColumnName="idimagen" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idlugares" ColumnName="idlugares" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbhorario">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbhorario">
+        <MappingFragment StoreEntitySet="tbhorario">
+          <ScalarProperty Name="idhorario" ColumnName="idhorario" />
+          <ScalarProperty Name="inicio" ColumnName="inicio" />
+          <ScalarProperty Name="fin" ColumnName="fin" />
+          <ScalarProperty Name="idlugares" ColumnName="idlugares" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblugares">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tblugares">
+        <MappingFragment StoreEntitySet="tblugares">
+          <ScalarProperty Name="idlugar" ColumnName="idlugar" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="long" ColumnName="long" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbpago">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbpago">
+        <MappingFragment StoreEntitySet="tbpago">
+          <ScalarProperty Name="idpagos" ColumnName="idpagos" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbpagolugares">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbpagolugares">
+        <MappingFragment StoreEntitySet="tbpagolugares">
+          <ScalarProperty Name="idlugarpagos" ColumnName="idlugarpagos" />
+          <ScalarProperty Name="idpago" ColumnName="idpago" />
+          <ScalarProperty Name="idlugares" ColumnName="idlugares" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbpersona">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbpersona">
+        <MappingFragment StoreEntitySet="tbpersona">
+          <ScalarProperty Name="idpersona" ColumnName="idpersona" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="paterno" ColumnName="paterno" />
+          <ScalarProperty Name="materno" ColumnName="materno" />
+          <ScalarProperty Name="ci" ColumnName="ci" />
+          <ScalarProperty Name="fechanac" ColumnName="fechanac" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbtelefonos">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbtelefonos">
+        <MappingFragment StoreEntitySet="tbtelefonos">
+          <ScalarProperty Name="idtelefonos" ColumnName="idtelefonos" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="codigoarea" ColumnName="codigoarea" />
+          <ScalarProperty Name="idlugares" ColumnName="idlugares" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbusuario">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbusuario">
+        <MappingFragment StoreEntitySet="tbusuario">
+          <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="femail" ColumnName="femail" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="gemail" ColumnName="gemail" />
+          <ScalarProperty Name="creado" ColumnName="creado" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbvotousuario">
+      <EntityTypeMapping TypeName="puntoencuentroModel.tbvotousuario">
+        <MappingFragment StoreEntitySet="tbvotousuario">
+          <ScalarProperty Name="idvotousuario" ColumnName="idvotousuario" />
+          <ScalarProperty Name="idlugar" ColumnName="idlugar" />
+          <ScalarProperty Name="iduser" ColumnName="iduser" />
+          <ScalarProperty Name="scor" ColumnName="scor" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="votos">
+      <EntityTypeMapping TypeName="puntoencuentroModel.votos">
+        <MappingFragment StoreEntitySet="votos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="total_votes" ColumnName="total_votes" />
+          <ScalarProperty Name="total_value" ColumnName="total_value" />
+          <ScalarProperty Name="used_ips" ColumnName="used_ips" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="fechamodificacion" ColumnName="fechamodificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

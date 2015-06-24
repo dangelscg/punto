@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="puntoencuentroModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="puntoencuentroModelStoreContainer">
+    <EntitySet Name="tb_categorias" EntityType="puntoencuentroModel.Store.tb_categorias" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tb_lugar_voto" EntityType="puntoencuentroModel.Store.tb_lugar_voto" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbcatlugar" EntityType="puntoencuentroModel.Store.tbcatlugar" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbevento" EntityType="puntoencuentroModel.Store.tbevento" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbgaleria" EntityType="puntoencuentroModel.Store.tbgaleria" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbhorario" EntityType="puntoencuentroModel.Store.tbhorario" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tblugares" EntityType="puntoencuentroModel.Store.tblugares" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbpago" EntityType="puntoencuentroModel.Store.tbpago" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbpagolugares" EntityType="puntoencuentroModel.Store.tbpagolugares" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbpersona" EntityType="puntoencuentroModel.Store.tbpersona" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbtelefonos" EntityType="puntoencuentroModel.Store.tbtelefonos" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbusuario" EntityType="puntoencuentroModel.Store.tbusuario" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="tbvotousuario" EntityType="puntoencuentroModel.Store.tbvotousuario" store:Type="Tables" Schema="puntoencuentro" />
+    <EntitySet Name="votos" EntityType="puntoencuentroModel.Store.votos" store:Type="Tables" Schema="puntoencuentro" />
+    <AssociationSet Name="FK_tb_lugar_voto_lugar" Association="puntoencuentroModel.Store.FK_tb_lugar_voto_lugar">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tb_lugar_voto" EntitySet="tb_lugar_voto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbcatlugar_cate" Association="puntoencuentroModel.Store.FK_tbcatlugar_cate">
+      <End Role="tb_categorias" EntitySet="tb_categorias" />
+      <End Role="tbcatlugar" EntitySet="tbcatlugar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbcatlugar_lugar" Association="puntoencuentroModel.Store.FK_tbcatlugar_lugar">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbcatlugar" EntitySet="tbcatlugar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbevento_lugar" Association="puntoencuentroModel.Store.FK_tbevento_lugar">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbevento" EntitySet="tbevento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbgaleria_lugares" Association="puntoencuentroModel.Store.FK_tbgaleria_lugares">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbgaleria" EntitySet="tbgaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbhorario_lugares" Association="puntoencuentroModel.Store.FK_tbhorario_lugares">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbhorario" EntitySet="tbhorario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbpagolugares_lugares" Association="puntoencuentroModel.Store.FK_tbpagolugares_lugares">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbpagolugares" EntitySet="tbpagolugares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbpagolugares_pago" Association="puntoencuentroModel.Store.FK_tbpagolugares_pago">
+      <End Role="tbpago" EntitySet="tbpago" />
+      <End Role="tbpagolugares" EntitySet="tbpagolugares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbtelefonos_lugar" Association="puntoencuentroModel.Store.FK_tbtelefonos_lugar">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbtelefonos" EntitySet="tbtelefonos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbusuario_user" Association="puntoencuentroModel.Store.FK_tbusuario_user">
+      <End Role="tbpersona" EntitySet="tbpersona" />
+      <End Role="tbusuario" EntitySet="tbusuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbvotousuario_lugar" Association="puntoencuentroModel.Store.FK_tbvotousuario_lugar">
+      <End Role="tblugares" EntitySet="tblugares" />
+      <End Role="tbvotousuario" EntitySet="tbvotousuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbvotousuario_user" Association="puntoencuentroModel.Store.FK_tbvotousuario_user">
+      <End Role="tbusuario" EntitySet="tbusuario" />
+      <End Role="tbvotousuario" EntitySet="tbvotousuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tb_categorias">
+    <Key>
+      <PropertyRef Name="idcategorias" />
+    </Key>
+    <Property Name="idcategorias" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="responsable" Type="int" />
+    <Property Name="padre" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tb_lugar_voto">
+    <Key>
+      <PropertyRef Name="idvoto" />
+    </Key>
+    <Property Name="idvoto" Type="ubigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="num_votes" Type="uint" Nullable="false" />
+    <Property Name="total_score" Type="uint" Nullable="false" />
+    <Property Name="rating" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="id" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbcatlugar">
+    <Key>
+      <PropertyRef Name="idcatlugares" />
+    </Key>
+    <Property Name="idcatlugares" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idcategorias" Type="int" />
+    <Property Name="idlugares" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbevento">
+    <Key>
+      <PropertyRef Name="idevento" />
+    </Key>
+    <Property Name="idevento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="varchar" MaxLength="100" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="idtipo" Type="int" />
+    <Property Name="idlugar" Type="int" Nullable="false" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbgaleria">
+    <Key>
+      <PropertyRef Name="idimagen" />
+    </Key>
+    <Property Name="idimagen" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="descripcion" Type="varchar" MaxLength="600" />
+    <Property Name="idlugares" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbhorario">
+    <Key>
+      <PropertyRef Name="idhorario" />
+    </Key>
+    <Property Name="idhorario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="inicio" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fin" Type="timestamp" Nullable="false" />
+    <Property Name="idlugares" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tblugares">
+    <Key>
+      <PropertyRef Name="idlugar" />
+    </Key>
+    <Property Name="idlugar" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="varchar" MaxLength="100" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="descripcion" Type="varchar" MaxLength="600" />
+    <Property Name="web" Type="varchar" MaxLength="100" />
+    <Property Name="imagen" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="lat" Type="decimal" />
+    <Property Name="long" Type="decimal" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbpago">
+    <Key>
+      <PropertyRef Name="idpagos" />
+    </Key>
+    <Property Name="idpagos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="imagen" Type="varchar" MaxLength="50" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbpagolugares">
+    <Key>
+      <PropertyRef Name="idlugarpagos" />
+    </Key>
+    <Property Name="idlugarpagos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idpago" Type="int" />
+    <Property Name="idlugares" Type="int" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbpersona">
+    <Key>
+      <PropertyRef Name="idpersona" />
+    </Key>
+    <Property Name="idpersona" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="paterno" Type="varchar" MaxLength="50" />
+    <Property Name="materno" Type="varchar" MaxLength="50" />
+    <Property Name="ci" Type="varchar" MaxLength="12" />
+    <Property Name="fechanac" Type="date" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbtelefonos">
+    <Key>
+      <PropertyRef Name="idtelefonos" />
+    </Key>
+    <Property Name="idtelefonos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="numero" Type="bigint" />
+    <Property Name="tipo" Type="int" />
+    <Property Name="codigoarea" Type="int" />
+    <Property Name="idlugares" Type="int" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbusuario">
+    <Key>
+      <PropertyRef Name="idusuario" />
+    </Key>
+    <Property Name="idusuario" Type="bigint" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="50" />
+    <Property Name="pass" Type="varchar" MaxLength="100" />
+    <Property Name="fid" Type="varchar" MaxLength="100" />
+    <Property Name="femail" Type="varchar" MaxLength="60" />
+    <Property Name="fullname" Type="varchar" MaxLength="100" />
+    <Property Name="gid" Type="decimal" />
+    <Property Name="gemail" Type="varchar" MaxLength="60" />
+    <Property Name="creado" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="tbvotousuario">
+    <Key>
+      <PropertyRef Name="idvotousuario" />
+      <PropertyRef Name="idlugar" />
+    </Key>
+    <Property Name="idvotousuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idlugar" Type="int" Nullable="false" />
+    <Property Name="iduser" Type="bigint" />
+    <Property Name="scor" Type="tinyint" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <EntityType Name="votos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="text" Nullable="false" />
+    <Property Name="total_votes" Type="int" Nullable="false" />
+    <Property Name="total_value" Type="int" Nullable="false" />
+    <Property Name="used_ips" Type="longtext" Nullable="false" />
+    <Property Name="fechacreacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fechamodificacion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="estado" Type="int" />
+  </EntityType>
+  <Association Name="FK_tb_lugar_voto_lugar">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="0..1" />
+    <End Role="tb_lugar_voto" Type="puntoencuentroModel.Store.tb_lugar_voto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tb_lugar_voto">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbcatlugar_cate">
+    <End Role="tb_categorias" Type="puntoencuentroModel.Store.tb_categorias" Multiplicity="0..1" />
+    <End Role="tbcatlugar" Type="puntoencuentroModel.Store.tbcatlugar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_categorias">
+        <PropertyRef Name="idcategorias" />
+      </Principal>
+      <Dependent Role="tbcatlugar">
+        <PropertyRef Name="idcategorias" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbcatlugar_lugar">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="0..1" />
+    <End Role="tbcatlugar" Type="puntoencuentroModel.Store.tbcatlugar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbcatlugar">
+        <PropertyRef Name="idlugares" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbevento_lugar">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="1" />
+    <End Role="tbevento" Type="puntoencuentroModel.Store.tbevento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbevento">
+        <PropertyRef Name="idlugar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbgaleria_lugares">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="0..1" />
+    <End Role="tbgaleria" Type="puntoencuentroModel.Store.tbgaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbgaleria">
+        <PropertyRef Name="idlugares" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbhorario_lugares">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="1" />
+    <End Role="tbhorario" Type="puntoencuentroModel.Store.tbhorario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbhorario">
+        <PropertyRef Name="idlugares" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbpagolugares_lugares">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="0..1" />
+    <End Role="tbpagolugares" Type="puntoencuentroModel.Store.tbpagolugares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbpagolugares">
+        <PropertyRef Name="idlugares" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbpagolugares_pago">
+    <End Role="tbpago" Type="puntoencuentroModel.Store.tbpago" Multiplicity="0..1" />
+    <End Role="tbpagolugares" Type="puntoencuentroModel.Store.tbpagolugares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbpago">
+        <PropertyRef Name="idpagos" />
+      </Principal>
+      <Dependent Role="tbpagolugares">
+        <PropertyRef Name="idpago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbtelefonos_lugar">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="0..1" />
+    <End Role="tbtelefonos" Type="puntoencuentroModel.Store.tbtelefonos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbtelefonos">
+        <PropertyRef Name="idlugares" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbusuario_user">
+    <End Role="tbpersona" Type="puntoencuentroModel.Store.tbpersona" Multiplicity="1" />
+    <End Role="tbusuario" Type="puntoencuentroModel.Store.tbusuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbpersona">
+        <PropertyRef Name="idpersona" />
+      </Principal>
+      <Dependent Role="tbusuario">
+        <PropertyRef Name="idusuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbvotousuario_lugar">
+    <End Role="tblugares" Type="puntoencuentroModel.Store.tblugares" Multiplicity="1" />
+    <End Role="tbvotousuario" Type="puntoencuentroModel.Store.tbvotousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblugares">
+        <PropertyRef Name="idlugar" />
+      </Principal>
+      <Dependent Role="tbvotousuario">
+        <PropertyRef Name="idlugar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbvotousuario_user">
+    <End Role="tbusuario" Type="puntoencuentroModel.Store.tbusuario" Multiplicity="0..1" />
+    <End Role="tbvotousuario" Type="puntoencuentroModel.Store.tbvotousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbusuario">
+        <PropertyRef Name="idusuario" />
+      </Principal>
+      <Dependent Role="tbvotousuario">
+        <PropertyRef Name="iduser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

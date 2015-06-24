@@ -1,0 +1,89 @@
+﻿@model punto.Models.tbpersona
+
+@{
+    Layout = "~/Views/layout/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear</title>
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <script>
+            $(window).load(function (evt) {
+                console.log("cargo la pagina web");
+                $("#btbuscar").click(function onclick(et) {
+                    console.log("onlcikc" + $("#buscar").val());
+                    $.ajax({
+                        url: 'http://localhost:1906/api/values/',
+                        type: 'get',
+                        data: {ci:$("#buscar").val()},
+                        success: function (datos) {
+                            console.log(datos);
+                            if (datos != null) {
+                                $("#nombre").html(datos.nombre);
+                                $("#ape").html(datos.paterno + " " + datos.materno);
+                            } else {
+                                $("#nombre").html("No exite");
+                                $("#ape").html("");
+                            }
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+        <input type="text" id="buscar" />
+        <button id="btbuscar" >buscar</button>
+
+        <div>
+            <p id="nombre"></p>
+            <p id="ape"></p>
+        </div>
+
+
+
+
+
+
+        @{
+            int i = 0;
+            i++;
+            @i
+            }
+
+        @Html.Label("este es un label")
+        @Html.TextBox("nombre", "este es el nombre", 
+            new { placeholder="Tu nombre",@class="textos" }
+        )
+        @{
+            var lista=new List<SelectListItem>(){
+                new SelectListItem(){ Text="bolivia", Value="1"},
+                new SelectListItem(){ Text="Chile", Value="0"},
+            };
+          }
+        @Html.DropDownList("algo",lista)
+        <br />
+        
+        /********************************************************************/
+        @using (Html.BeginForm()){
+            @Html.ValidationSummary()
+            
+            
+            @Html.LabelFor(a=>a.nombre)
+            @Html.TextBoxFor(a=>a.nombre)
+            @Html.ValidationMessageFor(a => a.nombre, "", new {style="color:red" })
+
+            <input type="submit" value="enviar" />
+        }
+
+    </div>
+</body>
+</html>

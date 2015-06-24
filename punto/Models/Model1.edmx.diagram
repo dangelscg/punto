@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a01e87307cd44424bff3ed5ccb4983f4" Name="Diagram1">
+        <EntityTypeShape EntityType="puntoencuentroModel.tb_categorias" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tb_lugar_voto" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbcatlugar" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbevento" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbgaleria" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbhorario" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tblugares" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbpago" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbpagolugares" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbpersona" Width="1.5" PointX="1.5" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbtelefonos" Width="1.5" PointX="3" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbusuario" Width="1.5" PointX="3.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.tbvotousuario" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoencuentroModel.votos" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbcatlugar_cate" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tb_lugar_voto_lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbcatlugar_lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbevento_lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbgaleria_lugares" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbhorario_lugares" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbpagolugares_lugares" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbtelefonos_lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbvotousuario_lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbpagolugares_pago" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbusuario_user" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoencuentroModel.FK_tbvotousuario_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
